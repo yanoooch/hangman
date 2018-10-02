@@ -1,1 +1,1 @@
-print(fuga)
+print("fuga")

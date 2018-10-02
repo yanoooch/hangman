@@ -39,5 +39,6 @@ class Deck:
     def __repr__(self):
         return str(self.deck_list)
 
-d = Deck()
-print(d)
+c1 = Card(2, 13)
+c2 = Card(1, 13)
+print(c1 < c2)
