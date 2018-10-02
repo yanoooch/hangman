@@ -12,6 +12,22 @@ class Card:
     def __repr__(self):
         return f"{self.nums[self.num]} of {self.suits[self.suit]}"
 
+    def __lt__(self, c2):
+        if self.num < c2.num:
+            return True
+        elif self.num == c2.num and self.suit < c2.suit:
+            return True
+        else:
+            return False
+    
+    def __gt__(self, c2):
+        if self.num > c2.num:
+            return True
+        elif self.num == c2.num and self.suit > c2.suit:
+            return True
+        else:
+            return False
+
 class Deck:
     deck_list = []
     def __init__(self):
@@ -19,8 +35,9 @@ class Deck:
             for j in range(2, 15):
                 self.deck_list.append(Card(i, j))
         random.shuffle(self.deck_list)
+    
+    def __repr__(self):
+        return str(self.deck_list)
 
 d = Deck()
-for i in d.deck_list:
-    print(i)
-    
+print(d)
